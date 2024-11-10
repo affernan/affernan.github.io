@@ -7,6 +7,31 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
+	header {
+            background-color: #333; /* Fondo de header oscuro */
+            padding: 1px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        header a {
+            color: #FCF5A6 !important; /* Color dorado */
+            text-decoration: none;
+            padding: 10px;
+            #font-weight: bold;
+        }
+        header a:hover {
+            background-color: #444; /* Fondo al pasar el mouse */
+        }
+		#content {
+			margin-top: 25px;
+            padding: 5px;
+			width: 580px;
+            background-color: white; /* Fondo del contenido */
+            flex: 1;
+            #text-align: center;
+            color: black; /* Color del texto en contenido */			
+        }
     body {
         background-color: #f0f0f2;
         margin: 0;
@@ -35,12 +60,45 @@
     </style>    
 </head>
 
+<script>
+    // Función para mostrar el contenido según la página seleccionada
+    function showPage(page) {
+        let content = document.getElementById('content');
+        if (page === 'home') {
+            content.innerHTML = '<h1>Welcome to affernan personal page</h1><p>This page is Under Construction.</p><p><a href="https://www.researchgate.net/profile/Alejandro-Fernandez-Gil" target="_blank">See my researchgate profile...</a></p><p><a href="mailto:duu15@txstate.edu">(Contact)</a></p>';
+        } else if (page === 'about') {
+            content.innerHTML = '<h2>Acerca de</h2><p>Esta es la sección acerca de nosotros.</p>';
+        } else if (page === 'services') {
+            content.innerHTML = '<h2>Servicios</h2><p>Aquí ofrecemos nuestros servicios.</p>';
+        } else if (page === 'contact') {
+            content.innerHTML = '<h2>Contacto</h2><p>Contáctanos en esta sección.</p>';
+        }
+    }
+	
+	window.onload = function() {
+        showPage('home');
+    };
+</script>
+
 <body>
+
 <div>
-    <h1>Welcome to affernan's personal page!</h1>
-    <p>This page is 'Under Construction'.</p>
-    <p><a href="https://www.researchgate.net/profile/Alejandro-Fernandez-Gil" target="_blank">See my researchgate profile...</a></p>
-	<p><a href="mailto:duu15@txstate.edu">(Contact)</a></p>
+	<header>
+		<a href="#" onclick="showPage('home')">Home</a>
+		<a href="#" onclick="showPage('about')">Publications</a>
+		<a href="#" onclick="showPage('services')">Teaching</a>
+		<a href="#" onclick="showPage('contact')">Contact</a>
+	</header>
+	
+	<div id="content">
+    <!-- Aquí se mostrará el contenido dinámico -->
+    <p>Selecciona una opción del menú para ver el contenido.</p>
+	<p>Selecciona una opción del menú para ver el contenido.</p>
+	<p>Selecciona una opción del menú para ver el contenido.</p>
+	<p>Selecciona una opción del menú para ver el contenido.</p>
+	</div>
+
+
 </div>
 
 
