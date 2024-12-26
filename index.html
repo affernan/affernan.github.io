@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0020)https://example.com/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Welcome to affernan's personal page!</title>
+    <title>Alejandro Fernández Gil</title>
 
     
     
@@ -24,7 +24,7 @@
             background-color: #444; /* Fondo al pasar el mouse */
         }
 		#content {
-			margin-top: 25px;
+			margin-top: 5px;
             padding: 5px;
 			width: 580px;
             background-color: white; /* Fondo del contenido */
@@ -40,9 +40,9 @@
         
     }
     div {
-        width: 600px;
-        margin: 5em auto;
-        padding: 2em;
+        #width: 600px;
+        #margin: 5em auto;
+        #padding: 2em;
         background-color: #fdfdff;
         border-radius: 0.5em;
         box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
@@ -65,7 +65,7 @@
     function showPage(page) {
         let content = document.getElementById('content');
         if (page === 'home') {
-            content.innerHTML = '<h1>Welcome to affernan personal page</h1><p>This page is Under Construction.</p><p><a href="https://www.researchgate.net/profile/Alejandro-Fernandez-Gil" target="_blank">See my researchgate profile...</a></p><p><a href="mailto:duu15@txstate.edu">(Contact)</a></p>';
+            content.innerHTML = '<h1>Alejandro Fernández Gil</h1><p>This page is Under Construction.</p><p><a href="https://www.researchgate.net/profile/Alejandro-Fernandez-Gil" target="_blank">See my researchgate profile...</a></p><p><a href="mailto:duu15@txstate.edu">(Contact)</a></p>';
         } else if (page === 'about') {
             content.innerHTML = '<h2>Acerca de</h2><p>Esta es la sección acerca de nosotros.</p>';
         } else if (page === 'services') {
@@ -90,16 +90,57 @@
 		<a href="#" onclick="showPage('contact')">Contact</a>
 	</header>
 	
-	<div id="content">
+	<!--<div id="content">
     <!-- Aquí se mostrará el contenido dinámico -->
-    <p>Selecciona una opción del menú para ver el contenido.</p>
+    <!--<p>Selecciona una opción del menú para ver el contenido.</p>
 	<p>Selecciona una opción del menú para ver el contenido.</p>
 	<p>Selecciona una opción del menú para ver el contenido.</p>
 	<p>Selecciona una opción del menú para ver el contenido.</p>
-	</div>
+	</div>-->
+</div>
 
+<div style="padding: 5px">
+	<h1>Alejandro Fernández Gil</h1>
+</div>
+<hr>
+
+<div style="padding: 7px">
+	I am a Postdoctoral Scholar in the <a href="https://www.engineering.txst.edu/"> Ingram School of Engineering (ISoE)</a> at <a href="https://www.txst.edu/"> Texas State University (TXST)</a>.
+	<br>
+	<br>
+	I was a Postdoctoral Fellow in the <a href="https://www.ingenieria.pucv.cl/">Faculty of Engineering</a> at <a href="https://www.pucv.cl/">Pontifical Catholic University of Valparaíso (PUCV)</a> in the group of <a href="https://h2in.cl/">H2in</a>. Previously, I was a Ph.D. student at the <a href="https://usm.cl/">Federico Santa María Technical University (UTFSM)</a> under the supervision of Carlos Castro and Eduardo Lalla-Ruiz.
+	<br>
+	<br>
+	See my CV.
+</div>
+<hr>
+<div style="padding: 5px">
+	<h1>Contact</h1>
+Address: Ingram School of Engineering, 4207C Transportation Lab, 327 W Woods St, Texas State University, San Marcos, TX 78666 U.S.,
+<br>
+Email: <a href="mailto:duu15@txstate.edu">duu15 [at] txstate [dot] edu</a>.
+</div>
+<hr>
+<div style="padding: 5px">
+	<h1>Research</h1>
+My work focuses broadly on Operations Research, Computational Intelligence Algorithms for Logistics, and Optimization in Renewable Energy Systems. I develop mathematical models and artificial intelligence techniques for sustainable transportation and scheduling problems. Much of my current work is motivated by cutting-edge approaches to mitigating GHG emissions, which have driven transformative advancements in electric aircraft and battery infrastructure planning. I am also broadly interested in integrating optimization models, geographic information systems, and computational development frameworks to tackle critical challenges related to clean energy and green hydrogen generation.
+</div>
+<hr>
+<div style="padding: 5px">
+
+	<!--<h1>Publications</h1>-->
+	 <!--<script src="https://bibbase.org/show?bib=https://raw.githubusercontent.com/affernan/affernan.github.io/refs/heads/main/els-refs.bib&jsonp=1"></script>-->
 
 </div>
+
+<?php
+$_GET['bib']='pub/papers.bib';
+$_GET['all']=1;
+$_GET['academic']=1;
+include( 'pub/bibtexbrowser.php' );
+?>
+
+<hr>
 
 
 <iframe id="C0tk9jHH" frameborder="0" src="./Example Domain_files/translateSandbox.html" style="width: 0px; height: 0px; display: none;"></iframe></body></html>
