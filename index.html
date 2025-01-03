@@ -3,12 +3,12 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Alejandro Fernández Gil</title>
 
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type="text/css">
 	header {
-            background-color: #333; /* Fondo de header oscuro */
+            background-color: #421716; /* #333 Fondo de header oscuro */
             padding: 1px;
             display: flex;
             justify-content: space-around;
@@ -100,36 +100,115 @@
 	</div>-->
 </div>
 
-<div style="padding: 5px; display: flex; flex-direction: row; align-items: center;" oncontextmenu="return false;">
-    <h1 style="margin-right: 10px">Alejandro Fernández Gil</h1>
-    <img src="img/star.png" alt="Star" style="height: 30px; pointer-events: none; user-select: none;">
+
+<div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+    <!-- Div interior original -->
+    <div style="display: flex; flex-direction: row; align-items: center;" oncontextmenu="return false;">
+        <h1 style="margin-right: 10px;">Alejandro Fernández Gil</h1>
+        <img src="img/star.png" alt="Star" style="height: 30px; pointer-events: none; user-select: none;">
+    </div>
+
+    <!-- Nuevo div alineado a la derecha -->
+    <div class="responsive-div">
+        <p class="computer-font">Contact <span style="display: inline-block; transform: rotate(-90deg);">  &#10550;</span></p>
+		<p>327 W Woods St, San Marcos, TX 78666, U.S. <span style="font-size: 28px;">&#8982;</span> </p>
+		<p>4207C Transportation Lab  <span style="font-size: 24px;">&#8962;</span> </p>
+		<p><a href="mailto:duu15@txstate.edu">duu15 [at] txstate [dot] edu</a> &#9993; </p>
+    </div>
 </div>
 
+<style>
+    .responsive-div {
+        text-align: right;
+        margin-right: 20px; /* Espaciado en pantallas grandes */
+		line-height: 0.5;
+    }
+	.computer-font {
+        font-family: 'Courier New', Courier, monospace; /* Fuente tipo máquina de escribir */
+		font-weight: bold;
+    }
 
+    @media (max-width: 768px) { /* Cuando la pantalla sea más pequeña */
+        .responsive-div {
+            text-align: center; /* Centra el contenido */
+            margin: 10px 0; /* Añade un poco de espacio arriba y abajo */
+            width: 100%; /* Ocupa todo el ancho disponible */
+        }
+    }
+</style>
 
 <hr>
 
-<div style="padding: 7px">
-	I am a Postdoctoral Scholar in the <a href="https://www.engineering.txst.edu/"> Ingram School of Engineering (ISoE)</a> at <a href="https://www.txst.edu/"> Texas State University (TXST)</a>.
-	<br>
-	<br>
-	I was a Postdoctoral Fellow in the <a href="https://www.ingenieria.pucv.cl/">Faculty of Engineering</a> at <a href="https://www.pucv.cl/">Pontifical Catholic University of Valparaíso (PUCV)</a> in the group of <a href="https://h2in.cl/">H2in</a> led by Yunesky Masip. Previously, I was a Ph.D. student at the <a href="https://usm.cl/">Federico Santa María Technical University (UTFSM)</a> under the supervision of Carlos Castro and Eduardo Lalla-Ruiz.
-	<br>
-	<br>
-	See my CV.
+<div style="padding: 5px; display: flex; flex-direction: row; align-items: flex-start; gap: 20px;">
+    <!-- Primer div -->
+    <div style="flex: 1; margin-top: 15px; text-align: justify">
+        I am a Postdoctoral Scholar in the <a href="https://www.engineering.txst.edu/"> Ingram School of Engineering (ISoE)</a> at <a href="https://www.txst.edu/"> Texas State University (TXST)</a> under the supervision of <a href="https://scholar.google.com/citations?user=CI-eGyEAAAAJ&hl=es&oi=ao">Dr. Wenquan Dong</a>.
+        <br>
+        <br>
+        I was a Postdoctoral Fellow in the <a href="https://www.ingenieria.pucv.cl/">Faculty of Engineering</a> at <a href="https://www.pucv.cl/">Pontifical Catholic University of Valparaíso (PUCV)</a> in the group of <a href="https://h2in.cl/">H2in</a> led by <a href="https://scholar.google.com/citations?user=1XmfDUAAAAAJ&hl=es&oi=ao">Dr. Yunesky Masip</a>. Previously, I was a Ph.D. candidate at the <a href="https://usm.cl/">Federico Santa María Technical University (UTFSM)</a> under the supervision of <a href="https://www.researchgate.net/profile/Carlos-Castro">Dr. Carlos Castro</a> and <a href="https://scholar.google.com/citations?user=Y4cOc34AAAAJ&hl=es&oi=ao">Dr. Eduardo Lalla-Ruiz</a>.
+        <br>
+        <br>
+        See my CV.
+    </div>
+
+    <!-- Segundo div -->
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <!-- Imagen -->
+        <img src="img/patagonia.webp" style="width: 150px; height: auto; border-radius: 0px;">
+    </div>
 </div>
+
+
+
+
+
 <hr>
 <div style="padding: 5px">
-	<h2>Contact</h2>
-Address: Ingram School of Engineering, 4207C Transportation Lab, 327 W Woods St, Texas State University, San Marcos, TX 78666 U.S.,
-<br>
-Email: <a href="mailto:duu15@txstate.edu">duu15 [at] txstate [dot] edu</a>.
+<h2>Research</h2>
+<div style="margin-bottom: 15px; margin-right: 15px; text-align: justify">My work focuses broadly on Operations Research, Computational Intelligence Algorithms for Logistics, and Optimization in Renewable Energy Systems. I develop mathematical models and artificial intelligence techniques for sustainable transportation and scheduling problems. Much of my current work is motivated by cutting-edge approaches to mitigating GHG emissions, which have driven transformative advancements in electric aircraft and battery infrastructure planning. I am also broadly interested in integrating optimization models, geographic information systems, and computational development frameworks to tackle critical challenges related to clean energy and green hydrogen generation.</div>
+<div></div>
 </div>
+
+
 <hr>
 <div style="padding: 5px">
-	<h2>Research</h2>
-My work focuses broadly on Operations Research, Computational Intelligence Algorithms for Logistics, and Optimization in Renewable Energy Systems. I develop mathematical models and artificial intelligence techniques for sustainable transportation and scheduling problems. Much of my current work is motivated by cutting-edge approaches to mitigating GHG emissions, which have driven transformative advancements in electric aircraft and battery infrastructure planning. I am also broadly interested in integrating optimization models, geographic information systems, and computational development frameworks to tackle critical challenges related to clean energy and green hydrogen generation.
+<h2><p style="color: red;">News!<a></h2>
+<div style="margin-left: 20px; margin-right: 15px; text-align: justify">
+	<table border="0" style="width: 70%; border-collapse: separate; border-spacing: 0 10px;">
+	<tr>
+        <td style="width: 5px; padding: 0px;"><li></td>
+		<td style="padding: 0px;">Dec 24: Our abstract accepted in <a href="https://www.iise.org/annual/">2025 IISE Annual Conference and Expo</a>, May 31 - June 3, in Atlanta, Georgia, USA (IISEAnnual2025), “Queueing Strategic Planning for Electric Aircraft Battery Swap and Megacharging with Time Constraints”.</td>
+    </tr>
+	
+	<tr>
+        <td style="width: 5px; padding: 0px;"><li></td>
+        <td style="padding: 0px;">Nov 24: Speaker in the <a href="https://www.engineering.txst.edu/">ISoE Industrial Engineering Program</a> - Research Seminar Series (Fall'24), November 1, in San Marcos, Texas, USA, “The cumulative vehicle routing problem with time windows: models and algorithm”. <a href="https://txst.sharepoint.com/sites/GRP-ISoEAdministration/Shared%20Documents/General/Alejandro%20Fernandez%20Gil%20IE%20program%20seminar%20sepaker%20Nov%201%202024.pdf" target="_blank">[&#128227;]</a> </td>
+    </tr>
+	
+	<td style="width: 5px; padding: 0px;"><li></td>
+        <td style="padding: 0px;">
+    Oct 24: Our work was presented at the 
+    <a href="https://meetings.informs.org/wordpress/seattle2024/">2024 INFORMS Annual Meeting</a>, October 20-23, in Seattle, Washington, USA (INFORMS2024), 
+    “On the mathematical modeling of the multi-depot green vehicle routing problem with multiple one-to-many pickup and delivery operations and time windows”. 
+    
+    <!-- Símbolo Unicode -->
+    <!-- <a href="https://3449182.fs1.hubspotusercontent-na1.net/hubfs/3449182/Program%20Book%2010-18.pdf" target="_blank">[&#128227;]</a>  -->
+    
+    <!-- Imagen con alineación vertical -->
+    [<a href="https://www.linkedin.com/posts/clara-novoa-ramirez_informs-txst-txstengineering-activity-7254361019550965764-750v?utm_source=share&utm_medium=member_desktop" target="_blank">
+        <img src="img/in.png" style="width: 18px; height: 18px; vertical-align: middle;">
+    </a>]
+	
+    <tr>
+        <td style="width: 5px; padding: 0px;"><li></td>
+        <td style="padding: 0px;">May 24: Our abstract accepted in <a href="https://meetings.informs.org/wordpress/seattle2024/">2024 INFORMS Annual Meeting</a>, October 20-23, in Seattle, Washington, USA (INFORMS2024), “On the mathematical modeling of the multi-depot green vehicle routing problem with multiple one-to-many pickup and delivery operations and time windows”. <a href="https://3449182.fs1.hubspotusercontent-na1.net/hubfs/3449182/Program%20Book%2010-18.pdf" target="_blank">[&#128227;]</a></td>
+    </tr>
+	
+</table>
+
 </div>
+</div>
+
 
 <hr>
 <div style="padding: 5px; width:70%">
