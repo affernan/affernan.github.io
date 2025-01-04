@@ -219,16 +219,29 @@
 
 
 <hr>
-<div style="padding: 5px; width:70%">
+<style>
+    .responsive-divv {
+        padding: 5px;
+        width: 70%;
+        max-width: 100%;
+    }
 
+    @media screen and (max-width: 768px) {
+        .responsive-divv {
+            width: 100%; /* Al 100% en pantallas pequeñas */
+        }
+    }
+</style>
+
+<div class="responsive-divv">
+	
 	<h2>Publications</h2>
 	<script src="https://bibbase.org/show?bib=https://raw.githubusercontent.com/affernan/affernan.github.io/refs/heads/main/els-journals.bib&jsonp=1"></script>
-
 </div>
 
 <hr>
 
-<div style="padding: 5px; width:70%">
+<div class="responsive-divv">
 
 	<h2>Conferences</h2>
 	<script src="https://bibbase.org/show?bib=https://raw.githubusercontent.com/affernan/affernan.github.io/refs/heads/main/els-conf.bib&jsonp=1"></script>
