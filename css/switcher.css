@@ -1,0 +1,62 @@
+/* Contenedor opcional para limitar ancho */
+.switcher { max-width: 800px; }
+
+/* Pastilla */
+.segmented{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 opciones */
+  gap: 0;
+  padding: 4px;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  background: #f8fafc;
+  width: max-content;            /* se ajusta al contenido */
+  box-shadow: 0 1px 2px rgba(0,0,0,.06) inset;
+}
+
+/* Oculta radios */
+.segmented input{ display: none; }
+
+/* Botones */
+.segmented label{
+  z-index: 1;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 600;
+  user-select: none;
+  text-align: center;
+  color: #334155;
+}
+
+/* “Thumb” que se mueve */
+.segmented .thumb{
+  position: absolute;
+  top: 4px; bottom: 4px; left: 4px;
+  width: calc(50% - 8px);        /* mitad (2 opciones) */
+  border-radius: 9999px;
+  background: #111827;           /* color del thumb */
+  transition: transform .22s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+}
+
+/* Cambios cuando está seleccionada la segunda opción */
+.segmented:has(#tab2:checked) .thumb{ transform: translateX(100%); }
+
+/* Texto en blanco para la opción activa */
+.segmented:has(#tab1:checked) label[for="tab1"],
+.segmented:has(#tab2:checked) label[for="tab2"]{
+  color: #fff;
+}
+
+/* Panels: mostrar/ocultar */
+.panels .panel{ display: none; padding: 16px 0; }
+.switcher:has(#tab1:checked) #div1{ display: block; }
+.switcher:has(#tab2:checked) #div2{ display: block; }
+
+/* (Opcional) Modo oscuro básico */
+@media (prefers-color-scheme: dark){
+  .segmented{ background:#0b0f19; border-color:#1f2937; }
+  .segment ed label{ color:#cbd5e1; }
+}
