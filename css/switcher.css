@@ -1,5 +1,10 @@
 /* Contenedor opcional para limitar ancho */
-.switcher { max-width: 800px; }
+#.switcher { max-width: 800px; }
+.switcher {
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  margin-bottom: 15px;     /* opcional, separa del resto */
+}
 
 /* Pastilla */
 .segmented{
