@@ -7,7 +7,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	
+	<link rel="stylesheet" type="text/css" href="css/switcher.css">
+	
     <style type="text/css">
         header {
             background-color: #421716; /* #333 Dark Background */
@@ -340,6 +342,16 @@
 <!-- Section KANKUNAPA -->
 <div id="kankunapa" class="seccion" style="display:none">  
   <div style="text-align: center">
+		<div class="switcher">
+		<div class="segmented" role="tablist" aria-label="Selector de contenido">
+		<input type="radio" name="tab" id="tab1" checked />
+		<label for="tab1" role="tab" aria-selected="true">Fun</label>
+		
+		<input type="radio" name="tab" id="tab2" />
+		<label for="tab2" role="tab" aria-selected="false">Map</label>
+		
+		<span class="thumb" aria-hidden="true"></span>
+		</div>
   <div style="padding: 5px">KFG</div>  
   <div style="padding: 5px">UTFSM, Valparaíso</div>
   <div style="display: flex; flex-direction: row; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;">
@@ -376,12 +388,7 @@ style="max-width: 400px; width: 100%; height: auto;"
 }
 </style>
 
-
 <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:flex-start;">
-
-  
-  
-  
   <div style="display:flex; flex-direction:column; align-items:center; max-width:400px; width:100%;">
     <div style="padding:5px; text-align:center;">Scheveningen, Den Haag</div>
     <img
@@ -389,20 +396,16 @@ style="max-width: 400px; width: 100%; height: auto;"
       style="width:100%; height:auto;"
     >
   </div>
-
-	<div style="display:flex; flex-direction:column; align-items:center; max-width:400px; width:100%;">
+  <div style="display:flex; flex-direction:column; align-items:center; max-width:400px; width:100%;">
     <div style="padding:5px; text-align:center;">Elbe Sandstone Mountains, Bastei, Dresden</div>
     <img
       src="img/knp/bastei_dresden.JPG"      
       style="width:100%; height:auto;"
     >
   </div>
-
-
 </div>
 
 <style>
-
 @media (max-width: 700px) {
   div[style*="flex; gap"] {
     flex-direction: column;
