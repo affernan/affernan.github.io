@@ -1,476 +1,618 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Alejandro Fernández Gil</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alejandro Fernandez Gil | Research in Operations Research and Sustainable Transportation</title>
+  <meta name="description" content="Academic website of Alejandro Fernandez Gil, Postdoctoral Scholar at Texas State University. Research in operations research, sustainable transportation, green vehicle routing, energy systems, and optimization.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Alejandro Fernandez Gil">
+  <link rel="canonical" href="https://affernan.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alejandro Fernandez Gil | Research and Publications">
+  <meta property="og:description" content="Research, publications, teaching, and academic activities in optimization, sustainable transportation, and energy systems.">
+  <meta property="og:url" content="https://affernan.github.io/">
+  <meta property="og:image" content="https://affernan.github.io/img/7939581711421243151.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alejandro Fernandez Gil | Research and Publications">
+  <meta name="twitter:description" content="Research and publications in operations research, sustainable transportation, and energy systems.">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://bibbase.org">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f3efe8;
+      --paper: #fffdf8;
+      --ink: #1c1a17;
+      --muted: #635b50;
+      --brand: #4e1f1a;
+      --brand-soft: #efe1d4;
+      --line: #d8cbbb;
+      --accent: #99734d;
+      --shadow: 0 14px 34px rgba(78, 31, 26, 0.10);
+      --max: 1080px;
+    }
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    * {
+      box-sizing: border-box;
+    }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<link rel="stylesheet" type="text/css" href="css/switcher.css">
-	
-    <style type="text/css">
-        header {
-            background-color: #421716; /* #333 Dark Background */
-            padding: 1px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        header a {
-            color: #FCF5A6 !important; /* Gold color */
-            text-decoration: none;
-            padding: 10px;
-        }
-        header a:hover {
-            background-color: #444; /* Background mouse */
-        }
-        body {
-            background-color: #f0f0f2;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }        
-        .seccion {
-            margin-top: 5px;
-            padding: 10px;
-        }
-        .responsive-div {
-            text-align: right;
-            margin-right: 20px; 
-            line-height: 0.5;
-        }
-        .computer-font {
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-        }
-        @media (max-width: 700px) {
-            .responsive-div {
-                text-align: center;
-                margin: 10px 0;
-                width: 100%;
-            }
-        }
-		.accordion {
-		  background-color: #eee;
-		  color: #444;
-		  cursor: pointer;
-		  padding: 18px;
-		  width: 100%;
-		  border: none;
-		  text-align: left;
-		  outline: none;
-		  font-size: 15px;
-		  transition: 0.4s;
-		}		
-		.active, .accordion:hover {
-		  background-color: #ccc; 
-		}		
-		.panel {
-		  padding: 0 18px;
-		  display: none;
-		  background-color: white;
-		  overflow: hidden;
-		}
-    </style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(153, 115, 77, 0.16), transparent 30%),
+        linear-gradient(180deg, #f7f2eb 0%, var(--bg) 100%);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--brand);
+    }
+
+    a:hover {
+      color: #7a3028;
+    }
+
+    .shell {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(243, 239, 232, 0.92);
+      border-bottom: 1px solid rgba(216, 203, 187, 0.9);
+    }
+
+    .topbar-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 46px 0 24px;
+    }
+
+    .hero-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 0.8fr;
+      gap: 0;
+    }
+
+    .hero-copy {
+      padding: 38px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.88rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      max-width: 10ch;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 62ch;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      border: 1px solid #e2cfbd;
+      font-size: 0.92rem;
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 1px solid var(--brand);
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .button-link.alt {
+      background: transparent;
+      color: var(--brand);
+    }
+
+    .hero-side {
+      padding: 34px;
+      background: linear-gradient(180deg, #f8efe5 0%, #f3e3d5 100%);
+      border-left: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .portrait {
+      width: min(100%, 240px);
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+    }
+
+    .contact-card {
+      font-size: 0.97rem;
+    }
+
+    .section {
+      padding: 26px 0;
+    }
+
+    .section-title {
+      margin-bottom: 14px;
+    }
+
+    .section-intro {
+      margin: 0 0 22px;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(255, 253, 248, 0.84);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 8px 20px rgba(65, 35, 22, 0.05);
+    }
+
+    .news-list,
+    .plain-list {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .news-list li,
+    .plain-list li {
+      margin-bottom: 12px;
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .pub-item {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 8px 18px rgba(78, 31, 26, 0.05);
+    }
+
+    .pub-meta {
+      color: var(--muted);
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .pub-links a {
+      text-decoration: none;
+      font-size: 0.93rem;
+    }
+
+    .teaching-columns {
+      columns: 2;
+      column-gap: 26px;
+    }
+
+    .teaching-columns ul {
+      break-inside: avoid;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .photo-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-card p {
+      margin: 0;
+      padding: 12px 14px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    footer {
+      padding: 34px 0 50px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .grid-2,
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        border-left: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .teaching-columns {
+        columns: 1;
+      }
+
+      .photo-card img {
+        height: auto;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alejandro Fernandez Gil",
+    "url": "https://affernan.github.io/",
+    "image": "https://affernan.github.io/img/7939581711421243151.webp",
+    "jobTitle": "Postdoctoral Scholar",
+    "worksFor": {
+      "@type": "CollegeOrUniversity",
+      "name": "Texas State University"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Universidad Tecnica Federico Santa Maria"
+    },
+    "affiliation": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Texas State University"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Pontificia Universidad Catolica de Valparaiso"
+      }
+    ],
+    "sameAs": [
+      "https://orcid.org/0000-0003-0291-7739"
+    ],
+    "knowsAbout": [
+      "Operations research",
+      "Optimization",
+      "Green vehicle routing",
+      "Sustainable transportation",
+      "Energy systems",
+      "Hydrogen value chains"
+    ]
+  }
+  </script>
 </head>
-
 <body>
-
-<!-- Header -->
-<div>
-    <header>        
-        <a href="#" onclick="showPage('home')">Home</a>
-        <a href="#" onclick="showPage('publications')">Publications</a>
-        <a href="#" onclick="showPage('teaching')">Teaching</a>
-		<!-- <a href="#" onclick="showPage('projects')">Topics</a>        -->
-        <a href="#" onclick="showPage('kankunapa')">Others</a>
-    </header>
-</div>
-
-	
-
-
-<div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-        
-        <div style="display: flex; flex-direction: row; align-items: center;" oncontextmenu="return false;">
-            <h1 style="margin-left: 10px; margin-right: 12px;">
-			  Alejandro Fernández Gil
-			</h1>
-            <img src="img/star.png" alt="Star" style="height: 30px; pointer-events: none; user-select: none;">
-        </div>
-
-        
-        <div class="responsive-div">
-            <p class="computer-font">Contact <span style="display: inline-block; transform: rotate(-90deg);"> &#10550;</span></p>
-            <p>327 W Woods St, San Marcos, TX 78666, USA</p>
-           <!-- <p>Transportation Lab</p>-->
-            <p><a href="mailto:duu15@txstate.edu">duu15 [at] txstate [dot] edu</a> &#9993; </p>
-            <p><a href="mailto:afernandezgil@acm.org">afernandezgil [at] acm [dot] org</a> &#9993; </p>
-        </div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Alejandro Fernandez Gil</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#activities">Activities</a>
+        <a href="#others">Others</a>
+      </nav>
     </div>
+  </header>
 
-    <hr>
-	
-<!-- HOME Section -->
-<div id="home" class="seccion">
-    
+  <main class="shell">
+    <section class="hero" id="about">
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Operations Research | Sustainable Transportation | Energy Systems</p>
+            <h1>Alejandro Fernandez Gil</h1>
+            <p class="lead">
+              I am a Postdoctoral Scholar in the Ingram School of Engineering at Texas State University.
+              My research focuses on optimization, sustainable transportation, green vehicle routing,
+              charging and battery-swapping systems, and energy transition planning.
+            </p>
+            <div class="chip-row" aria-label="Research areas">
+              <span class="chip">Green vehicle routing</span>
+              <span class="chip">Optimization models</span>
+              <span class="chip">Electric aircraft infrastructure</span>
+              <span class="chip">Hydrogen systems</span>
+              <span class="chip">Metaheuristics</span>
+            </div>
+            <p>
+              Previously, I was a Postdoctoral Fellow at the Faculty of Engineering of the
+              Pontifical Catholic University of Valparaiso and completed my Ph.D. in Computer
+              Engineering at Universidad Tecnica Federico Santa Maria.
+            </p>
+            <div class="link-row">
+              <a class="button-link" href="https://orcid.org/0000-0003-0291-7739" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-id-card"></i> ORCID
+              </a>
+              <a class="button-link alt" href="#publications">
+                <i class="fas fa-book-open"></i> View Publications
+              </a>
+            </div>
+          </div>
 
-    
-    <div style="padding: 5px; display: flex; flex-direction: row; align-items: flex-start; gap: 20px;">
-    
-        <div style="flex: 1; margin-top: 15px; text-align: justify; line-height: 1.3">
-            I am a Postdoctoral Scholar in the 
-            <a href="https://www.engineering.txst.edu/"> Ingram School of Engineering (ISoE)</a>
-            at <a href="https://www.txst.edu/"> Texas State University (TXST)</a>.
-            <br><br>
-            Previously, I was a Postdoctoral Fellow in the 
-            <a href="https://www.ingenieria.pucv.cl/">Faculty of Engineering</a>
-            at <a href="https://www.pucv.cl/">Pontifical Catholic University of Valparaíso (PUCV)</a>
-            in the group of <a href="https://h2in.cl/">H2in</a>. 
-			<br><br>
-            I also completed my Ph.D. in Computer Engineering at the 
-            <a href="https://usm.cl/">Federico Santa María Technical University (UTFSM)</a>.            
-            <br><br>
-            See my <a href="https://orcid.org/0000-0003-0291-7739">ORCID</a>.
+          <aside class="hero-side">
+            <img class="portrait" src="img/7939581711421243151.webp" alt="Portrait of Alejandro Fernandez Gil">
+            <div class="contact-card">
+              <strong>Contact</strong><br>
+              327 W Woods St, San Marcos, TX 78666, USA<br>
+              <a href="mailto:duu15@txstate.edu">duu15@txstate.edu</a><br>
+              <a href="mailto:afernandezgil@acm.org">afernandezgil@acm.org</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="highlights">
+      <div class="grid-2">
+        <div class="card">
+          <h2 class="section-title">Research Snapshot</h2>
+          <p class="section-intro">
+            I work on mathematically grounded models and practical algorithms for transportation and
+            energy systems, with particular interest in environmentally aware routing, infrastructure
+            planning, and decision support under operational constraints.
+          </p>
+          <ul class="plain-list">
+            <li>Optimization for electric and green mobility systems</li>
+            <li>Vehicle routing with environmental and time constraints</li>
+            <li>Planning of hydrogen and renewable energy value chains</li>
+            <li>Exact methods, metaheuristics, and hybrid solution strategies</li>
+          </ul>
         </div>
 
-        
-        <div style="display: flex; flex-direction: column; align-items: center;">        
-            <img src="img/7939581711421243151.webp" style="width: 150px; height: auto; border-radius: 0px;">
+        <div class="card">
+          <h2 class="section-title">Recent News</h2>
+          <ul class="news-list">
+            <li>February 7, 2026: Our paper on socio-environmental conflicts in solar hydrogen production was accepted in <em>Clean Technologies and Environmental Policy</em>.</li>
+            <li>December 15, 2025: Our abstract on electric vehicle routes under node-degree constraints was accepted for the 2026 IISE Annual Conference and Expo.</li>
+            <li>June 25, 2025: Our work on electric aircraft battery swap and megacharging planning was presented at the 2025 IISE Annual Conference and Expo.</li>
+            <li>October 2024: Our work on the multi-depot green vehicle routing problem with pickups, deliveries, and time windows was presented at the 2024 INFORMS Annual Meeting.</li>
+          </ul>
         </div>
-    </div>
+      </div>
+    </section>
 
-<hr>
-<div style="padding: 5px">
-<h2><p style="color: red;">News!<a></h2>
-<div style="margin-left: 20px; margin-right: 15px; text-align: justify">
-<style>
-    /* Responsive Table*/
-    @media screen and (max-width: 768px) {
-        table {
-            width: 100% !important; /* Width change 100% */
-        }
-    }
-</style>
-	<table border="0" style="width: 70%; border-collapse: separate; border-spacing: 0 10px;">
+    <section class="section" id="publications">
+      <h2 class="section-title">Selected Journal Publications</h2>
+      <p class="section-intro">
+        Below is a crawlable selection of journal papers with DOI links. This improves discoverability
+        for search engines and gives readers direct access to your most relevant work.
+      </p>
 
-	<tr>
-        <td style="width: 5px; padding: 0px;"><li></td>
-		<td style="padding: 0px;">Feb 7: Our paper was accepted for publication in <em>Clean Technologies and Environmental Policy</em>, “Strategic assessment of socio-environmental conflicts in solar hydrogen production: a case of Antofagasta, Chile”.</td>
-	</tr>
-	<tr>
-        <td style="width: 5px; padding: 0px;"><li></td>
-		<td style="padding: 0px;">Dec 15: Our abstract was accepted for the <a href="https://www.iise.org/annual/">2026 IISE Annual Conference and Expo</a>, to be held from May 16-19 in Arlington, Texas, USA (IISEAnnual2026), “Optimizing Electric Vehicle Routes under Node-Degree Constraints in Battery-Swapping Logistics Networks”.</td>
-    </tr>
-	<tr>
-        <td style="width: 5px; padding: 0px;"><li></td>
-		<td style="padding: 0px;">Jun 25: Our work was presented at the 2025 IISE Annual Conference and Expo, on Jun 2, in Georgia, Atlanta, USA, “Queueing Strategic Planning for Electric Aircraft Battery Swap and Megacharging with Time Constraints”. <a href="doc/IISE25_front.jpg" target="_blank">[&#128421;</a>,<a href="https://www.proquest.com/scholarly-journals/queueing-strategic-planning-electric-aircraft/docview/3243713373/se-2?accountid=5683" target="_blank">&#127760;&#65038;</a>] </td>
-	</tr>
+      <div class="pub-list">
+        <article class="pub-item">
+          <h3>A Review of Heuristics and Hybrid Methods for Green Vehicle Routing Problems considering Emissions</h3>
+          <div class="pub-meta">Journal of Advanced Transportation, 2022</div>
+          <p>
+            Review article on heuristic and hybrid optimization methods for green vehicle routing
+            problems under environmental considerations and emissions-aware logistics planning.
+          </p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1155/2022/5714991" target="_blank" rel="noopener noreferrer">DOI: 10.1155/2022/5714991</a>
+          </div>
+        </article>
 
-	<tr>
-        <td style="width: 5px; padding: 0px;"><li></td>
-		<td style="padding: 0px;">May 25: I was selected to serve as a Session Chair in the OR Applications in Drones, Electrified Transportation, and Power Distribution Session at the upcoming 2025 IISE Annual Conference & Expo, which will be held on June 2 in Atlanta, Georgia, USA. [<a href="doc/IISE25_Schedule.pdf" target="_blank">&#128196;</a>,<a href="https://iise.secure-platform.com/annual/solicitations/102003/sessiongallery/schedule?dayId=86011&searchParams=%7B%22pageIndex%22%3A0,%22sortMode%22%3A%22SessionName%22,%22sortDirection%22%3A%22Ascending%22,%22sortByFieldId%22%3Anull,%22displayMode%22%3Anull,%22filterByFieldValues%22%3A%5B%5D,%22filterByTextValue%22%3Anull,%22filterByFavorites%22%3Afalse,%22filterByScheduleRoomIds%22%3A%5B%5D,%22filterBySessionTypeIds%22%3A%5B%5D,%22filterByScheduleDayIds%22%3A%5B%5D,%22filterByScheduleTimeSlotIds%22%3A%5B%5D,%22isScheduleOtherEventSearchAllowed%22%3Atrue%7D" target="_blank">&#127760;&#65038;</a>] </td>
-	</tr>
-		
-		<tr>
-        <td style="width: 5px; padding: 0px;"><li></td>
-		<td style="padding: 0px;">Mar 25: Completition of the Tenure-Track Orientation: Scholarship & Teaching Excellence Program (STEP) in the Faculty Development of Texas State University, was held from August 21, 2024 to March 21, 2025 in San Marcos, Texas.</td>
-    </tr>
-	<tr>
-        <td style="width: 5px; padding: 0px;"><li></td>
-		<td style="padding: 0px;">Mar 25: Part of Programm Committee in the <a href="https://gecco-2025.sigevo.org/HomePage">Genetic and Evolutionary Computation Conference</a>, to be held from July 14-18 in Malaga, Spain (GECCO2025).</td>
-    </tr>
-	<tr>
-        <td style="width: 5px; padding: 0px;"><li></td>
-		<td style="padding: 0px;">Dec 24: Our abstract was accepted for the <a href="https://www.iise.org/annual/">2025 IISE Annual Conference and Expo</a>, to be held from May 31 to June 3 in Atlanta, Georgia, USA (IISEAnnual2025), “Queueing Strategic Planning for Electric Aircraft Battery Swap and Megacharging with Time Constraints”.</td>
-    </tr>
-	
-	<tr>
-        <td style="width: 5px; padding: 0px;"><li></td>
-        <td style="padding: 0px;">Nov 24: Speaker in the <a href="https://www.engineering.txst.edu/">ISoE Industrial Engineering Program</a> - Research Seminar Series (Fall'24), on November 1, in San Marcos, Texas, USA, “The cumulative vehicle routing problem with time windows: models and algorithm”. <a href="https://txst.sharepoint.com/sites/GRP-ISoEAdministration/Shared%20Documents/General/Alejandro%20Fernandez%20Gil%20IE%20program%20seminar%20sepaker%20Nov%201%202024.pdf" target="_blank">[&#128227;]</a> </td>
-    </tr>
-	
-	<td style="width: 5px; padding: 0px;"><li></td>
-        <td style="padding: 0px;">
-    Oct 24: Our work was presented at the 
-    <a href="https://meetings.informs.org/wordpress/seattle2024/">2024 INFORMS Annual Meeting</a>, held  from October 20 to 23, in Seattle, Washington, USA (INFORMS2024), 
-    “On the mathematical modeling of the multi-depot green vehicle routing problem with multiple one-to-many pickup and delivery operations and time windows”. 
-    
-    
-    <!-- <a href="https://3449182.fs1.hubspotusercontent-na1.net/hubfs/3449182/Program%20Book%2010-18.pdf" target="_blank">[&#128227;]</a>  -->    
-    
-    [<a href="https://www.linkedin.com/posts/clara-novoa-ramirez_informs-txst-txstengineering-activity-7254361019550965764-750v?utm_source=share&utm_medium=member_desktop" target="_blank">
-        <img src="img/in.png" style="width: 18px; height: 18px; vertical-align: middle;">
-    </a>]
-	
-    <tr>
-        <td style="width: 5px; padding: 0px;"><li></td>
-        <td style="padding: 0px;">May 24: Our abstract was accepted for the <a href="https://meetings.informs.org/wordpress/seattle2024/">2024 INFORMS Annual Meeting</a>, held from October 20 to 23, in Seattle, Washington, USA (INFORMS2024), “On the mathematical modeling of the multi-depot green vehicle routing problem with multiple one-to-many pickup and delivery operations and time windows”. <a href="https://3449182.fs1.hubspotusercontent-na1.net/hubfs/3449182/Program%20Book%2010-18.pdf" target="_blank">[&#128227;]</a></td>
-    </tr>
-	
-</table>
+        <article class="pub-item">
+          <h3>The cumulative vehicle routing problem with time windows: models and algorithm</h3>
+          <div class="pub-meta">Annals of Operations Research, 2023</div>
+          <p>
+            Mathematical modeling and algorithmic development for cumulative vehicle routing problems
+            with time windows, combining exact optimization and advanced solution strategies.
+          </p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/s10479-022-05102-7" target="_blank" rel="noopener noreferrer">DOI: 10.1007/s10479-022-05102-7</a>
+          </div>
+        </article>
 
-</div>
-</div>    
+        <article class="pub-item">
+          <h3>Assessment of the green hydrogen value chain in cases of the local industry in Chile applying an optimization model</h3>
+          <div class="pub-meta">Energy, 2024</div>
+          <p>
+            Optimization-based assessment of green hydrogen value chains for local industrial use cases
+            in Chile, linking energy transition planning and practical deployment decisions.
+          </p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.energy.2024.131630" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.energy.2024.131630</a>
+          </div>
+        </article>
 
-<hr>
-<div style="padding: 5px">
-<h2><p style="color: black;">Editorial Activities<a></h2>
-<div style="margin-left: 20px; margin-right: 15px; text-align: justify">
-	<li>Member of the Institute of Industrial and Systems Engineers (IISE)</li>
-	<li>Reviewer for Computer and Industrial Engineering</li>
-	<li>PC Member of Genetic and Evolutionary Computation Conference - GECCO 2023/24/25</li>
-	<li>PC Member (Additional Reviewers) of 11/12th International Conference on Computational Logistics - ICCL 2020/21</li>
-	<li>Member of the Institute for Operations Research and the Management Sciences (INFORMS)</li>
-	<li>Member of the Association for Constraint Programming (ACP)</li>	
-	<li>Reviewer for Transportation Research Part E: Logistics and Transportation Review</li>
-	<li>Reviewer for Journal of Advanced Transportation</li>	
-	<li>Reviewer for Expert Systems with Applications</li>
-	<li>Reviewer for Cleaner and Circular Bioeconomy</li>
-	<li>Reviewer for Array</li>	
-	<li>Reviewer for Environmental Science and Pollution Research</li>
-	<li>Reviewer for ISA Transactions</li>
-	<li>Reviewer for Latin American Computing Conference - CLEI 2020/21/22/23/24.</li>
-</div>
-</div>
+        <article class="pub-item">
+          <h3>Socio-environmental and technical factors assessment of photovoltaic hydrogen production in Antofagasta, Chile</h3>
+          <div class="pub-meta">Energy Strategy Reviews, 2024</div>
+          <p>
+            Multi-factor assessment of photovoltaic hydrogen production that integrates socio-environmental
+            and technical dimensions for strategic energy planning.
+          </p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1016/j.esr.2024.101373" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.esr.2024.101373</a>
+          </div>
+        </article>
+      </div>
 
-</div>
-
-
-
-
-
-
-<!-- Section PUBLICATIONS -->
-<div id="publications" class="seccion" style="display:none">    
-    
-    <div class="responsive-divv" style="padding: 5px; width: 70%; max-width: 100%;">
-        <h2>Publications</h2>
+      <div class="card" style="margin-top: 22px;">
+        <h3>Full Publications List</h3>
+        <p class="section-intro">
+          The complete publications and conference lists are also available below through BibBase using
+          the BibTeX files stored in this repository.
+        </p>
+        <h3>Journal Articles</h3>
         <script src="https://bibbase.org/show?bib=https://raw.githubusercontent.com/affernan/affernan.github.io/refs/heads/main/els-journals.bib&jsonp=1"></script>
-    </div>
-
-    <hr>
-    <div class="responsive-divv" style="padding: 5px; width: 70%; max-width: 100%;">
-        <h2>Conferences</h2>
+        <h3>Conference Papers</h3>
         <script src="https://bibbase.org/show?bib=https://raw.githubusercontent.com/affernan/affernan.github.io/refs/heads/main/els-conf.bib&jsonp=1"></script>
-    </div>
-</div>
+      </div>
+    </section>
 
-<!-- Section PROJECTS -->
-<div id="projects" class="seccion" style="display:none">
+    <section class="section" id="teaching">
+      <h2 class="section-title">Teaching</h2>
+      <div class="card teaching-columns">
+        <ul class="plain-list">
+          <li><strong>Pontifical Catholic University of Valparaiso, Chile</strong></li>
+          <li>Fall 2023: MER-305 Optimization of Energy Systems, Master in Renewable Energies</li>
+          <li>Fall 2023: IME-1012 Algorithmic Programming, Mechanical Engineering Degree</li>
+          <li><strong>Universidad Tecnica Federico Santa Maria, Chile</strong></li>
+          <li>Spring 2023: IWI-131 Computer Programming, Computer Engineering Degree</li>
+          <li>Spring 2023: ELO-329 Object-Oriented Programming, Electronic and Telematics Engineering Degree</li>
+          <li>Fall 2021: INF-292 Optimization, Engineering Degrees</li>
+          <li>Spring 2021: ILI-281 Fundamentals of Operations Research, Engineering Degrees</li>
+          <li>Fall 2020: IWI-131 Computer Programming, Engineering Degrees</li>
+          <li>Spring 2020: INF-292 Optimization, Engineering Degrees</li>
+          <li>Spring 2020: IWI-131 Computer Programming, Engineering Degrees</li>
+          <li>Fall 2019: ILI-281 Fundamentals of Operations Research, Engineering Degrees</li>
+          <li>Fall 2019: IWI-131 Computer Programming, Engineering Degrees</li>
+          <li>Spring 2019: IWI-131 Computer Programming, Engineering Degrees</li>
+          <li>Fall 2018: IWI-131 Computer Programming, Engineering Degrees</li>
+          <li>Spring 2018: IWI-131 Computer Programming, Engineering Degrees</li>
+          <li>Fall 2017: INF-292 Optimization, Engineering Degrees</li>
+          <li><strong>University of Valparaiso, Chile</strong></li>
+          <li>Fall 2020: ICI-322 Analysis and Design of Algorithms, Computer Engineering Degree</li>
+          <li>Spring 2020: ICI-313 Data Structures, Computer Engineering Degree</li>
+        </ul>
+      </div>
+    </section>
 
-<button class="accordion">Callback functions; LazyConstraint</button>
-<div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
+    <section class="section" id="activities">
+      <h2 class="section-title">Editorial and Professional Activities</h2>
+      <div class="card">
+        <ul class="plain-list">
+          <li>Member of the Institute of Industrial and Systems Engineers</li>
+          <li>Member of INFORMS and the Association for Constraint Programming</li>
+          <li>Reviewer for <em>Computer and Industrial Engineering</em></li>
+          <li>Reviewer for <em>Transportation Research Part E: Logistics and Transportation Review</em></li>
+          <li>Reviewer for <em>Journal of Advanced Transportation</em></li>
+          <li>Reviewer for <em>Expert Systems with Applications</em></li>
+          <li>Reviewer for <em>Environmental Science and Pollution Research</em></li>
+          <li>Reviewer for <em>ISA Transactions</em></li>
+          <li>PC Member of GECCO 2023, 2024, and 2025</li>
+          <li>Additional Reviewer for ICCL 2020 and 2021</li>
+          <li>Reviewer for CLEI 2020, 2021, 2022, 2023, and 2024</li>
+        </ul>
+      </div>
+    </section>
 
-<button class="accordion">Belady's Anomaly</button>
-<div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
+    <section class="section" id="others">
+      <h2 class="section-title">Others</h2>
+      <p class="section-intro">A few personal snapshots from places that matter to me.</p>
+      <div class="photo-grid">
+        <figure class="photo-card">
+          <img src="img/knp/valpo_pcruz_1.jpeg" alt="Valparaiso city view">
+          <p>UTFSM, Valparaiso</p>
+        </figure>
+        <figure class="photo-card">
+          <img src="img/knp/zaanse_schans_2.jpg" alt="Zaanse Schans in Amsterdam">
+          <p>Zaanse Schans, Amsterdam</p>
+        </figure>
+        <figure class="photo-card">
+          <img src="img/knp/scheveningen.jpg" alt="Scheveningen, The Hague">
+          <p>Scheveningen, Den Haag</p>
+        </figure>
+        <figure class="photo-card">
+          <img src="img/knp/patg2.jpg" alt="Torres del Paine in Patagonia">
+          <p>Torres del Paine, Patagonia</p>
+        </figure>
+      </div>
+    </section>
+  </main>
 
-<button class="accordion">Ackermann function</button>
-<div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-	
-<!--
-	<div style="padding: 5px">
-<div style="margin-left: 20px; margin-right: 15px; text-align: justify">
-  <table style="width: 100%; border-collapse: collapse;">
-    <tr>
-      <td style="vertical-align: top; padding: 10px;">
-        <img src="img/corfo.webp" alt="Imagen 1" style="width: 130px;">
-      </td>
-      <td style="vertical-align: top; padding: 10px;">
-        ...
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top; padding: 10px;">
-        <img src="img/anid.webp" alt="Imagen 2" style="width: 100px;">
-      </td>
-      <td style="vertical-align: top; padding: 10px;">
-        ...
-      </td>
-    </tr>    
-  </table>
-</div>
-
-	    
-</div>-->
-	
-</div>
-
-<!-- Section TEACHING -->
-<div id="teaching" class="seccion" style="display:none">
-    <div style="padding: 5px">	
-	<div style="margin-left: 20px; margin-right: 15px; text-align: justify">			
-		
-	<li><i>Pontifical Catholic University of Valparaíso (PUCV), Chile</i>
-		<ul>
-		<li><i>(Fall 2023)</i> MER-305 Optimization of Energy Systems, <i>Master in Renewable Energies</i>,</li>
-		<li><i>(Fall 2023)</i> IME-1012 Algorithmic Programming, <i>Mechanical Engineering Degree</i>.</li>
-		</ul>
-		</li>	
-	<li><i>Federico Santa María Technical University (UTFSM), Chile</i>
-	<ul>
-	<li><i>(Spring 2023)</i> IWI-131 Computer programming, <i>Computer Engineering Degree</i>,</li>
-	<li><i>(Spring 2023)</i> ELO-329 Object-Oriented Programming, <i>Electronic and Telematics Engineering Degree</i>,</li>	
-	<li><i>(Fall 2021)</i> INF-292 Optimization, <i>Engineering Degrees</i>,</li>
-	<li><i>(Spring 2021)</i> ILI-281 Fundamentals of Operations Research, <i>Engineering Degrees</i>,</li>
-	<li><i>(Fall 2020)</i> IWI-131 Computer programming, <i>Engineering Degrees</i>,</li>
-	<li><i>(Spring 2020)</i> INF-292 Optimization, <i>Engineering Degrees</i>,</li>
-	<li><i>(Spring 2020)</i> IWI-131 Computer programming, <i>Engineering Degrees</i>,</li>
-	<li><i>(Fall 2019)</i> ILI-281 Fundamentals of Operations Research, <i>Engineering Degrees</i>,</li>
-	<li><i>(Fall 2019)</i> IWI-131 Computer programming, <i>Engineering Degrees</i>,</li>
-	<li><i>(Spring 2019)</i> IWI-131 Computer programming, <i>Engineering Degrees</i>,</li>
-	<li><i>(Fall 2018)</i> IWI-131 Computer programming, <i>Engineering Degrees</i>,</li>
-	<li><i>(Spring 2018)</i> IWI-131 Computer programming, <i>Engineering Degrees</i>,</li>
-	<li><i>(Fall 2017)</i> INF-292 Optimization, <i>Engineering Degrees</i>.</li>
-	</ul>
-	</li>
-	
-	<li><i>University of Valparaíso (UV), Chile</i>
-	<ul>
-	<li><i>(Fall 2020)</i> ICI-322 Analysis and Design of Algorithms, <i>Computer Engineering Degree</i>,</li>
-	<li><i>(Spring 2020)</i> ICI-313 Data structures, <i>Computer Engineering Degree</i>.</li>	
-	</ul>
-	</li>
-		
-	</div>
-	</div>
-</div>
-
-<!-- Section KANKUNAPA -->
-	
-	
-<div id="kankunapa" class="seccion" style="display:none">  
-	
-  <div style="text-align: center">		  
-		  
-  <div style="padding: 5px">KFG</div>  
-  <div style="padding: 5px">UTFSM, Valparaíso</div>
-  <div style="display: flex; flex-direction: row; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;">
-  <img
-    src="img/knp/valpo_pcruz_1.jpeg"
-    alt="(CR) Pablo Cruz"
-    style="max-width: 300px; width: 100%; height: auto;"
-  >
-  <img
-    src="img/knp/valpo_pcruz_2.jpeg"
-    alt="(CR) Pablo Cruz"
-    style="max-width: 500px; width: 100%; height: auto;"
-  >
-</div>
-
-<div style="padding: 5px">Zaanse Schans, Amsterdam</div>
-<div style="display: flex; flex-direction: row; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;">
-<img
-src="img/knp/zaanse_schans_2.jpg"
-alt="(CR) Pablo Cruz"
-style="max-width: 400px; width: 100%; height: auto;"
->
-<img
-src="img/knp/zaanse_schans_1.jpg"
-style="max-width: 400px; width: 100%; height: auto;"
->
-</div>
-
-<style>
-@media (max-width: 700px) {
-  div img {
-    max-width: 100% !important;
-  }
-}
-</style>
-
-<div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:flex-start;">
-  <div style="display:flex; flex-direction:column; align-items:center; max-width:400px; width:100%;">
-    <div style="padding:5px; text-align:center;">Scheveningen, Den Haag</div>
-    <img
-      src="img/knp/scheveningen.jpg"      
-      style="width:100%; height:auto;"
-    >
-  </div>
-	
-  <div style="display:flex; flex-direction:column; align-items:center; max-width:400px; width:100%;">
-    <div style="padding:5px; text-align:center;">Elbe Sandstone Mountains, Bastei, Dresden</div>
-    <img
-      src="img/knp/bastei_dresden.JPG"      
-      style="width:100%; height:auto;"
-    >
-  </div>
-	</div>
-
-	<div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:flex-start;">
-  <div style="display:flex; flex-direction:column; align-items:center; max-width:400px; width:100%;">
-    <div style="padding:5px; text-align:center;">Grey Glacier, Patagonia, Puerto Natales</div>
-    <img
-      src="img/knp/patg1.jpg"      
-      style="width:100%; height:auto;"
-    >
-  </div>
-  <div style="display:flex; flex-direction:column; align-items:center; max-width:400px; width:100%;">
-    <div style="padding:5px; text-align:center;">Torres del Paine, Patagonia, Puerto Natales</div>
-    <img
-      src="img/knp/patg2.jpg"      
-      style="width:100%; height:auto;"
-    >
-  </div>
-</div>
-
-<style>
-@media (max-width: 700px) {
-  div[style*="flex; gap"] {
-    flex-direction: column;
-    align-items: center;
-  }
-  div[style*="flex-direction:column"] {
-    max-width: 100% !important;
-  }
-}
-</style>
-
-
-
-<!-- Script -->
-<script>
-    function showPage(page) {
-        
-        let sections = ['home', 'publications', 'projects', 'teaching', 'kankunapa'];
-
-        
-        sections.forEach(function(sectionId) {
-            document.getElementById(sectionId).style.display = 'none';
-        });
-        
-        document.getElementById(page).style.display = 'block';
-    }
-    
-    window.onload = function() {
-        showPage('home');
-    };
-</script>
-
-	<script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
-</script>
-
+  <footer class="shell">
+    This website highlights research, publications, teaching, and academic service by Alejandro Fernandez Gil.
+  </footer>
 </body>
 </html>
