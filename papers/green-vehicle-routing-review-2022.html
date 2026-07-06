@@ -32,172 +32,100 @@
   <meta name="citation_fulltext_html_url" content="https://affernan.github.io/papers/green-vehicle-routing-review-2022.html">
   <meta name="citation_abstract_html_url" content="https://affernan.github.io/papers/green-vehicle-routing-review-2022.html">
   <style>
-    :root {
-      --bg: #f3efe8;
-      --paper: #fffdf8;
-      --ink: #1c1a17;
-      --muted: #635b50;
-      --brand: #4e1f1a;
-      --brand-soft: #efe1d4;
-      --line: #d8cbbb;
-      --accent: #99734d;
-      --shadow: 0 14px 34px rgba(78, 31, 26, 0.10);
-      --max: 920px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(153, 115, 77, 0.16), transparent 30%),
-        linear-gradient(180deg, #f7f2eb 0%, var(--bg) 100%);
-      font-family: Georgia, "Times New Roman", Times, serif;
-      line-height: 1.65;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
     }
 
     a {
-      color: var(--brand);
+      color: #1f4e79;
     }
 
-    .shell {
-      width: min(var(--max), calc(100% - 32px));
+    a:hover {
+      color: #163a59;
+    }
+
+    .page {
+      max-width: 900px;
       margin: 0 auto;
+      padding: 24px 20px 48px;
     }
 
-    .topbar {
-      padding: 18px 0;
-    }
-
-    .crumb {
-      color: var(--muted);
-      text-decoration: none;
+    .top-link {
       font-size: 0.95rem;
-    }
-
-    .hero {
-      padding: 10px 0 26px;
-    }
-
-    .card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      padding: 34px;
-    }
-
-    .eyebrow {
-      color: var(--accent);
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin: 0 0 10px;
-    }
-
-    h1, h2, h3 {
-      line-height: 1.15;
-      margin: 0 0 14px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-size: 2rem;
+      line-height: 1.2;
+      margin: 0 0 14px;
+      font-weight: normal;
     }
 
-    .meta {
-      color: var(--muted);
-      margin-bottom: 18px;
+    h2 {
+      font-size: 1.25rem;
+      margin: 28px 0 10px;
+      font-weight: normal;
+      border-bottom: 1px solid #cfcfcf;
+      padding-bottom: 4px;
+    }
+
+    .authors,
+    .journal-line,
+    .doi-line {
+      margin: 6px 0;
       font-size: 1rem;
     }
 
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 22px 0 4px;
+    .actions {
+      margin: 18px 0 22px;
     }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      text-decoration: none;
-      border: 1px solid var(--brand);
-      background: var(--brand);
-      color: #fff;
+    .actions a {
+      margin-right: 16px;
+      white-space: nowrap;
     }
 
-    .button.alt {
-      background: transparent;
-      color: var(--brand);
-    }
-
-    .section {
-      padding: 0 0 22px;
-    }
-
-    .summary {
-      color: var(--muted);
-      font-size: 1.04rem;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .info-box {
-      background: rgba(255, 253, 248, 0.76);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-    }
-
-    .label {
-      color: var(--accent);
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 8px;
+    .panel {
+      border: 1px solid #d6d6d6;
+      background: #fafafa;
+      padding: 14px 16px;
+      margin-top: 16px;
     }
 
     ul {
-      margin: 0;
-      padding-left: 20px;
+      margin-top: 8px;
     }
 
-    li {
-      margin-bottom: 10px;
+    .citation {
+      border-left: 3px solid #999999;
+      padding-left: 14px;
+      margin-top: 10px;
     }
 
-    .cite {
-      padding: 16px 18px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: #faf5ef;
-      font-size: 0.98rem;
+    .footer-note {
+      margin-top: 36px;
+      font-size: 0.92rem;
+      color: #555555;
     }
 
-    footer {
-      padding: 0 0 42px;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    @media (max-width: 760px) {
-      .card {
-        padding: 24px;
+    @media (max-width: 700px) {
+      .page {
+        padding: 18px 14px 36px;
       }
 
-      .info-grid {
-        grid-template-columns: 1fr;
+      h1 {
+        font-size: 1.65rem;
+      }
+
+      .actions a {
+        display: inline-block;
+        margin-bottom: 10px;
       }
     }
   </style>
@@ -264,80 +192,57 @@
   </script>
 </head>
 <body>
-  <div class="shell">
-    <div class="topbar">
-      <a class="crumb" href="../index.html">Back to main site</a>
+  <main class="page">
+    <div class="top-link"><a href="../index.html">Return to main site</a></div>
+
+    <h1>A Review of Heuristics and Hybrid Methods for Green Vehicle Routing Problems considering Emissions</h1>
+
+    <p class="authors">Alejandro Fernandez Gil, Eduardo Lalla-Ruiz, Mariam Gomez Sanchez, and Carlos Castro</p>
+    <p class="journal-line"><em>Journal of Advanced Transportation</em>, Volume 2022, Article ID 5714991, 38 pages</p>
+    <p class="doi-line">DOI: <a href="https://doi.org/10.1155/2022/5714991" target="_blank" rel="noopener noreferrer">10.1155/2022/5714991</a></p>
+
+    <div class="actions">
+      <a href="../doc/fernandez-gil-2022-green-vehicle-routing-review.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
+      <a href="https://doi.org/10.1155/2022/5714991" target="_blank" rel="noopener noreferrer">Publisher page</a>
     </div>
-  </div>
 
-  <main class="shell hero">
-    <article class="card">
-      <p class="eyebrow">Journal Article Landing Page</p>
-      <h1>A Review of Heuristics and Hybrid Methods for Green Vehicle Routing Problems considering Emissions</h1>
-      <p class="meta">
-        Alejandro Fernandez Gil, Eduardo Lalla-Ruiz, Mariam Gomez Sanchez, and Carlos Castro<br>
-        <em>Journal of Advanced Transportation</em>, Volume 2022, Article ID 5714991, 38 pages
-      </p>
+    <h2>Overview</h2>
+    <p>
+      This article reviews the landscape of green vehicle routing problems and focuses on the heuristic
+      and hybrid solution methods used to address them. It organizes key problem variants, discusses how
+      emissions and environmental considerations are modeled, and summarizes practical algorithmic
+      strategies for obtaining strong solutions within reasonable computational time.
+    </p>
 
-      <div class="button-row">
-        <a class="button" href="https://doi.org/10.1155/2022/5714991" target="_blank" rel="noopener noreferrer">View DOI</a>
-        <a class="button alt" href="../doc/fernandez-gil-2022-green-vehicle-routing-review.pdf" target="_blank" rel="noopener noreferrer">Open PDF</a>
-      </div>
+    <h2>Why This Paper Matters</h2>
+    <ul>
+      <li>It offers a structured entry point to the green vehicle routing literature.</li>
+      <li>It highlights heuristic and hybrid approaches that remain useful when exact methods become expensive.</li>
+      <li>It helps researchers identify modeling patterns, benchmark directions, and open research opportunities.</li>
+    </ul>
 
-      <section class="section">
-        <h2>Article Overview</h2>
-        <p class="summary">
-          This article reviews the landscape of green vehicle routing problems and focuses on the
-          heuristic and hybrid solution methods used to address them. It organizes key problem variants,
-          discusses how emissions and environmental considerations are modeled, and summarizes practical
-          algorithmic strategies for obtaining strong solutions within reasonable computational time.
-        </p>
-      </section>
+    <h2>Keywords</h2>
+    <div class="panel">
+      Green vehicle routing problems; heuristics; hybrid methods; emissions-aware optimization; sustainable logistics.
+    </div>
 
-      <section class="section">
-        <h2>Why This Paper Matters</h2>
-        <ul>
-          <li>It gives a structured entry point to the green vehicle routing literature.</li>
-          <li>It highlights heuristic and hybrid approaches that are useful when exact methods become expensive.</li>
-          <li>It helps researchers identify modeling patterns, benchmark directions, and open research opportunities.</li>
-        </ul>
-      </section>
+    <h2>Recommended Citation</h2>
+    <div class="citation">
+      Fernandez Gil, A., Lalla-Ruiz, E., Gomez Sanchez, M., and Castro, C. (2022).
+      <em>A Review of Heuristics and Hybrid Methods for Green Vehicle Routing Problems considering Emissions</em>.
+      Journal of Advanced Transportation, 2022, 5714991.
+      <a href="https://doi.org/10.1155/2022/5714991" target="_blank" rel="noopener noreferrer">https://doi.org/10.1155/2022/5714991</a>
+    </div>
 
-      <div class="info-grid">
-        <section class="info-box">
-          <div class="label">Keywords</div>
-          <ul>
-            <li>Green vehicle routing problems</li>
-            <li>Heuristics</li>
-            <li>Hybrid methods</li>
-            <li>Emissions-aware optimization</li>
-            <li>Sustainable logistics</li>
-          </ul>
-        </section>
+    <h2>Access</h2>
+    <p>
+      Use the DOI as the canonical scholarly reference. This page is intended to improve web discoverability,
+      provide a concise overview, and offer direct access to the article PDF and citation details.
+    </p>
 
-        <section class="info-box">
-          <div class="label">Citation Details</div>
-          <div class="cite">
-            Fernandez Gil, A., Lalla-Ruiz, E., Gomez Sanchez, M., and Castro, C. (2022).
-            <em>A Review of Heuristics and Hybrid Methods for Green Vehicle Routing Problems considering Emissions</em>.
-            Journal of Advanced Transportation, 2022, 5714991.
-            https://doi.org/10.1155/2022/5714991
-          </div>
-        </section>
-      </div>
-
-      <section class="section" style="padding-top: 22px;">
-        <h2>Access</h2>
-        <p>
-          Use the DOI as the canonical scholarly reference. This page exists to improve web discoverability,
-          provide a clean summary, and offer a direct route to the article PDF and citation information.
-        </p>
-      </section>
-    </article>
+    <div class="footer-note">
+      Scholarly landing page for discoverability and citation support.
+    </div>
   </main>
-
-  <footer class="shell">
-    Scholarly landing page for discoverability and citation support.
-  </footer>
 </body>
 </html>
